@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Basado en Maqueta</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        customBlack: '#111827',
+                        customRed: '#e11d48',
+                        customGray: '#f3f4f6',
+                        customBrown: '#9a3412',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Personalizaciones adicionales para scrollbars y transiciones */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 font-sans text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <div class="max-w-[1600px] w-full mx-auto p-4 md:p-6 lg:p-8 flex-grow flex flex-col justify-between">
+        
+        <!-- Layout Principal: 3 Columnas principales (Marrón - Centro - Marrón) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch flex-grow">
+            
+            <!-- ========================================== -->
+            <!-- COLUMNA IZQUIERDA: DATOS EXTRA (MARRÓN) -->
+            <!-- ========================================== -->
+            <aside class="lg:col-span-3 bg-gradient-to-b from-amber-800 to-amber-900 text-amber-50 p-6 rounded-2xl shadow-xl flex flex-col justify-between space-y-6">
+                <div>
+                    <!-- Encabezado de la Columna -->
+                    <div class="flex items-center space-x-3 pb-4 border-b border-amber-700/60 mb-6">
+                        <i class="fa-solid fa-square-poll-vertical text-amber-300 text-2xl"></i>
+                        <h2 class="text-xl font-bold uppercase tracking-wider text-amber-100">Datos Extra</h2>
+                    </div>
+
+                    <!-- Datos y Estadísticas -->
+                    <div class="space-y-4">
+                        <div class="bg-amber-950/40 p-4 rounded-xl border border-amber-700/50 hover:bg-amber-950/60 transition-colors">
+                            <span class="text-xs uppercase font-semibold text-amber-300 block mb-1">Métrica Principal</span>
+                            <p class="text-2xl font-extrabold text-white">98.5%</p>
+                            <p class="text-xs text-amber-200/80 mt-1">Nivel de satisfacción registrado este mes.</p>
+                        </div>
+
+                        <div class="bg-amber-950/40 p-4 rounded-xl border border-amber-700/50 hover:bg-amber-950/60 transition-colors">
+                            <span class="text-xs uppercase font-semibold text-amber-300 block mb-1">Estatus del Sistema</span>
+                            <div class="flex items-center space-x-2 mt-1">
+                                <span class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></span>
+                                <span class="font-medium text-amber-100">Operativo al 100%</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-950/40 p-4 rounded-xl border border-amber-700/50 hover:bg-amber-950/60 transition-colors">
+                            <span class="text-xs uppercase font-semibold text-amber-300 block mb-1">Información Clave</span>
+                            <ul class="text-xs text-amber-100/90 space-y-2 mt-2">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2"></i> Actualizaciones semanales</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2"></i> Soporte multicanal 24/7</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2"></i> Integración flexible</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer del panel izquierdo -->
+                <div class="pt-4 border-t border-amber-700/60 text-xs text-amber-300/80 text-center">
+                    Panel Lateral Izquierdo &bull; Información Complementaria
+                </div>
+            </aside>
+
+            <!-- ========================================== -->
+            <!-- COLUMNA CENTRAL: TÍTULO, IMÁGENES, DESCRIPCIÓN -->
+            <!-- ========================================== -->
+            <main class="lg:col-span-6 flex flex-col space-y-6">
+                
+                <!-- 1. TÍTULO PRINCIPAL (NEGRO) -->
+                <header class="bg-gray-900 text-white p-5 rounded-2xl shadow-lg border border-gray-800 text-center">
+                    <h1 class="text-2xl md:text-3xl font-extrabold uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                        Portal Principal de Contenidos
+                    </h1>
+                </header>
+
+ <!-- 2. GALERÍA DE IMÁGENES / CONTENEDOR DE JUEGO (ROJO) -->
+<section id="ventana-juego" class="bg-gradient-to-br from-rose-600 to-red-700 rounded-2xl p-5 shadow-xl text-white flex flex-col justify-between min-h-[320px] relative overflow-hidden group transition-all duration-300 ease-in-out">
+    
+    <!-- Marca de agua decorativa (Se mantiene intacta) -->
+    <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+        <i class="fa-regular fa-image text-9xl"></i>
+    </div>
+
+    <!-- Encabezado / Controles superiores -->
+    <div class="flex justify-between items-center mb-4 relative z-10">
+        <span class="bg-red-900/50 backdrop-blur-md text-red-100 text-xs font-semibold px-3 py-1 rounded-full border border-red-400/30">
+            <i class="fa-solid fa-camera mr-1"></i> Visor de Galería
+        </span>
+        
+        <!-- Controles interactivos de Maximizar / Minimizar junto al contador -->
+        <div class="flex items-center gap-3">
+            <span id="image-counter" class="text-xs text-red-200 font-medium">Imagen 1 de 3</span>
+            <div class="flex gap-1.5 bg-black/20 p-1 rounded-lg backdrop-blur-sm border border-white/10">
+                <!-- Botón Minimizar -->
+                <button onclick="minimizarVentana()" class="hover:bg-white/20 text-white text-xs font-bold w-5 h-5 rounded flex items-center justify-center transition-colors" title="Minimizar">-</button>
+                <!-- Botón Maximizar -->
+                <button onclick="maximizarVentana()" class="hover:bg-white/20 text-white text-xs w-5 h-5 rounded flex items-center justify-center transition-colors" title="Maximizar">🗖</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor del Juego (Iframe) -->
+    <div id="contenedor-iframe" class="w-full grow bg-black rounded-xl overflow-hidden border border-red-400/20 shadow-inner relative z-10 transition-all duration-300">
+        <iframe id="iframe-juego" src="http://127.0.0.1:8080" class="w-full h-[450px] border-none block transition-all duration-300"></iframe>
+    </div>
+</section>
+
+<!-- Script de control de dimensiones -->
+<script>
+let esMaximizada = false;
+
+function minimizarVentana() {
+    const contenedorIframe = document.getElementById("contenedor-iframe");
+    // Colapsa el juego de forma fluida ocultándolo visualmente sin reiniciar la instancia de red
+    if (contenedorIframe.classList.contains('hidden')) {
+        contenedorIframe.classList.remove('hidden');
+    } else {
+        contenedorIframe.classList.add('hidden');
+    }
+}
+
+function maximizarVentana() {
+    const ventana = document.getElementById("ventana-juego");
+    const iframe = document.getElementById("iframe-juego");
+
+    if (!esMaximizada) {
+        // Modo Expandido (Cubre toda la pantalla del navegador de forma fija)
+        ventana.style.position = "fixed";
+        ventana.style.top = "0";
+        ventana.style.left = "0";
+        ventana.style.width = "100vw";
+        ventana.style.height = "100vh";
+        ventana.style.zIndex = "9999";
+        ventana.style.borderRadius = "0px";
+        
+        // Ajusta el alto del iframe calculando el espacio restante de la barra superior
+        iframe.style.height = "calc(100vh - 80px)";
+        esMaximizada = true;
+    } else {
+        // Restaura las clases e instrucciones originales de Tailwind CSS de tu maqueta
+        ventana.style.position = "";
+        ventana.style.top = "";
+        ventana.style.left = "";
+        ventana.style.width = "";
+        ventana.style.height = "";
+        ventana.style.zIndex = "";
+        ventana.style.borderRadius = "";
+        
+        // Retorna a la resolución interna del layout
+        iframe.style.height = "450px";
+        esMaximizada = false;
+    }
+}
+</script>
+
+                    <!-- Contenedor Visualizador de Imagen -->
+                    <div class="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-inner bg-red-950/40 flex items-center justify-center">
+                        <img id="featured-image" 
+                             src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Imagen Destacada" 
+                             class="w-full h-full object-cover transition-all duration-500 transform scale-100 hover:scale-105"
+                             onerror="this.src='https://placehold.co/800x500/e11d48/ffffff?text=Imagen+No+Disponible'">
+                        
+                        <!-- Overlay Informativo -->
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
+                            <h3 id="image-title" class="text-lg font-bold text-white drop-shadow">Composición Abstracta Moderna</h3>
+                            <p id="image-desc" class="text-xs text-gray-200 drop-shadow">Exploración de formas geométricas y color vibrante.</p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Control de la Galería -->
+                    <div class="flex justify-between items-center mt-4">
+                        <button id="prev-btn" class="bg-white/20 hover:bg-white/30 active:bg-white/40 text-white p-2.5 rounded-lg transition-all flex items-center justify-center space-x-2 px-4 text-sm font-medium backdrop-blur-sm">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            <span>Anterior</span>
+                        </button>
+                        <div class="flex space-x-2" id="dots-container">
+                            <!-- Indicadores generados por JS -->
+                        </div>
+                        <button id="next-btn" class="bg-white/20 hover:bg-white/30 active:bg-white/40 text-white p-2.5 rounded-lg transition-all flex items-center justify-center space-x-2 px-4 text-sm font-medium backdrop-blur-sm">
+                            <span>Siguiente</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- 3. SECCIÓN DESCRIPCIÓN (GRIS) -->
+                <section class="bg-slate-200/90 border border-slate-300 rounded-2xl p-6 shadow-md text-slate-800 flex-grow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4 pb-3 border-b border-slate-300">
+                            <i class="fa-solid fa-align-left text-slate-600 text-xl"></i>
+                            <h2 class="text-xl font-bold text-slate-800">Descripción del Proyecto</h2>
+                        </div>
+                        
+                        <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                            Esta plataforma está organizada según la estructura jerárquica de bloques definida en la maqueta inicial. Integra una cabecera temática, un área central dinámica para el contenido multimedia y secciones laterales destinadas a contextualizar y complementar los datos relevantes.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                            Cada bloque cumple una función específica: garantizar visibilidad inmediata de las imágenes principales, claridad en los títulos descriptivos y fácil acceso a las métricas secundarias en los márgenes de la interfaz.
+                        </p>
+                    </div>
+
+                    <!-- Tags / Categorías inferiores de la descripción -->
+                    <div class="mt-6 pt-4 border-t border-slate-300/80 flex flex-wrap gap-2 items-center">
+                        <span class="text-xs font-bold text-slate-500 uppercase mr-2">Etiquetas:</span>
+                        <span class="bg-slate-300 text-slate-700 text-xs px-3 py-1 rounded-md font-medium">Diseño UI</span>
+                        <span class="bg-slate-300 text-slate-700 text-xs px-3 py-1 rounded-md font-medium">Maquetación</span>
+                        <span class="bg-slate-300 text-slate-700 text-xs px-3 py-1 rounded-md font-medium">Estructura Modular</span>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- ========================================== -->
+            <!-- COLUMNA DERECHA: DATOS EXTRA (MARRÓN) -->
+            <!-- ========================================== -->
+            <aside class="lg:col-span-3 bg-gradient-to-b from-amber-800 to-amber-900 text-amber-50 p-6 rounded-2xl shadow-xl flex flex-col justify-between space-y-6">
+                <div>
+                    <!-- Encabezado de la Columna -->
+                    <div class="flex items-center space-x-3 pb-4 border-b border-amber-700/60 mb-6">
+                        <i class="fa-solid fa-database text-amber-300 text-2xl"></i>
+                        <h2 class="text-xl font-bold uppercase tracking-wider text-amber-100">Datos Extra</h2>
+                    </div>
+
+                    <!-- Widgets adicionales -->
+                    <div class="space-y-4">
+                        <!-- Noticias/Updates rápidas -->
+                        <div class="bg-amber-950/40 p-4 rounded-xl border border-amber-700/50">
+                            <h4 class="text-xs font-bold uppercase text-amber-300 mb-2 flex items-center">
+                                <i class="fa-solid fa-bell mr-2"></i> Novedades
+                            </h4>
+                            <div class="space-y-3 text-xs text-amber-100/90">
+                                <div class="pb-2 border-b border-amber-800/60">
+                                    <p class="font-semibold text-amber-50">Lanzamiento Versión 2.0</p>
+                                    <p class="text-amber-200/70 text-[11px] mt-0.5">Optimización de carga y nuevos estilos.</p>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-amber-50">Reporte Mensual</p>
+                                    <p class="text-amber-200/70 text-[11px] mt-0.5">Métricas disponibles en el panel general.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Enlaces Rápidos -->
+                        <div class="bg-amber-950/40 p-4 rounded-xl border border-amber-700/50">
+                            <h4 class="text-xs font-bold uppercase text-amber-300 mb-2 flex items-center">
+                                <i class="fa-solid fa-link mr-2"></i> Recurso Directo
+                            </h4>
+                            <div class="flex flex-col space-y-2 text-xs">
+                                <button onclick="showToast('Documentación abierta')" class="text-left py-1.5 px-3 rounded bg-amber-800/40 hover:bg-amber-800/70 text-amber-100 transition-colors flex items-center justify-between">
+                                    <span>Documentación API</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                                <button onclick="showToast('Descargando reportes...')" class="text-left py-1.5 px-3 rounded bg-amber-800/40 hover:bg-amber-800/70 text-amber-100 transition-colors flex items-center justify-between">
+                                    <span>Descargar Reportes</span>
+                                    <i class="fa-solid fa-download text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer del panel derecho -->
+                <div class="pt-4 border-t border-amber-700/60 text-xs text-amber-300/80 text-center">
+                    Panel Lateral Derecho &bull; Recursos Complementarios
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Elemento Toast para Notificaciones -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-gray-900 text-white px-5 py-3 rounded-xl shadow-2xl transition-all duration-300 opacity-0 pointer-events-none transform translate-y-4 flex items-center space-x-3 border border-gray-700 z-50">
+        <i class="fa-solid fa-circle-info text-amber-400"></i>
+        <span id="toast-message" class="text-sm font-medium">Notificación</span>
+    </div>
+
+    <!-- JavaScript para Galería e Interactividad -->
+    <script>
+        // Datos para la galería de imágenes (Sección Roja)
+        const images = [
+            {
+                url: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80',
+                title: 'Composición Abstracta Moderna',
+                desc: 'Exploración de formas geométricas y color vibrante.'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80',
+                title: 'Texturas y Contrastes',
+                desc: 'Efectos visuales con altos niveles de saturación.'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=80',
+                title: 'Luz y Fluidos Fluidos',
+                desc: 'Patrones fluidos inspirados en el arte contemporáneo.'
+            }
+        ];
+
+        let currentIndex = 0;
+
+        // Elementos DOM
+        const featuredImage = document.getElementById('featured-image');
+        const imageTitle = document.getElementById('image-title');
+        const imageDesc = document.getElementById('image-desc');
+        const imageCounter = document.getElementById('image-counter');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dotsContainer = document.getElementById('dots-container');
+
+        // Inicializar Indicadores de Puntos
+        function initDots() {
+            dotsContainer.innerHTML = '';
+            images.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `w-2.5 h-2.5 rounded-full transition-all ${idx === currentIndex ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/70'}`;
+                dot.onclick = () => goToImage(idx);
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        // Actualizar la Vista de la Imagen
+        function updateGallery() {
+            // Efecto de desvanecimiento simple
+            featuredImage.style.opacity = '0.3';
+            
+            setTimeout(() => {
+                featuredImage.src = images[currentIndex].url;
+                imageTitle.textContent = images[currentIndex].title;
+                imageDesc.textContent = images[currentIndex].desc;
+                imageCounter.textContent = `Imagen ${currentIndex + 1} de ${images.length}`;
+                featuredImage.style.opacity = '1';
+                initDots();
+            }, 200);
+        }
+
+        function goToImage(index) {
+            currentIndex = index;
+            updateGallery();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateGallery();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateGallery();
+        });
+
+        // Función Helper para Toast Notificaciones
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.textContent = msg;
+            
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            }, 3000);
+        }
+
+        // Inicialización
+        initDots();
+    </script>
+</body>
+</html>
